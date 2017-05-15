@@ -5,7 +5,7 @@ class ball {
   color c;
   float dx;
   float dy;
-  int state;
+  int state = 0;
 
   ball() {
     float r = random(255);
@@ -25,14 +25,26 @@ class ball {
   rad = r;
   };
   
+  void setColorwalee(){
+   c = color(51);
+  }
+  
   float getSize(){
     return rad; 
   }
-  
-  void grow(){
-   rad += .25; 
-  }
-  
+    
+    void grow(){
+         if (rad < 50 && rad > 0){
+           rad += .25; 
+     }
+    }
+    
+    void die(){
+     if (rad > 49){
+       state = 2; 
+     }
+    }
+    
   void setxyrad(float mx, float my, float r){
   x = mx;
   y = my;
@@ -58,5 +70,37 @@ class ball {
     if ( y >= height || y <= 0 ) {
        dy *= -1; 
     }
+  }
+  
+  float getX(){
+   return x; 
+  }
+  
+  float getY(){
+    return y;
+  }
+  
+  void setX(float c){
+   x = c; 
+  }
+    void setY(float c){
+   y = c; 
+  }
+    void setDx(float c){
+   dx = c; 
+  }
+    void setDy(float c){
+   dy = c; 
+  }
+  void setStop(float t,float w){
+   dx = t; dy = w; 
+  }
+  
+  void setState(int s){
+   state = s;
+  }
+  
+  int getState(){
+   return state; 
   }
 }
