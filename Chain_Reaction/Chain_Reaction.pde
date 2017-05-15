@@ -15,7 +15,7 @@ void setup() {
 }
 
 void draw() {
-  background(51);
+  background(0);
   for ( int i = 0; i < balls.length; i++ ) {
     balls[i].move();
     balls[i].show();
@@ -25,25 +25,27 @@ void draw() {
   }
   walee.show();
   walee.die();
+  for ( int x = 0; x < balls.length; x++ ) {
+    if (balls[x].getState() == 1) {
+      balls[x].setStop(0, 0);
+      balls[x].die();
+    }
+  }
   if (reactionStarted) {
     for ( int i = 0; i < balls.length; i++ ) {
-      for ( int x = 0; x < balls.length-1; x++ ) {
-        if (colliding(balls[i], balls[x]) && balls[x].getState() == 1) {
+      for ( int x = 0; x < balls.length; x++ ) {
+        if (colliding(balls[i], balls[x]) && balls[x].getState() == 1 && balls[i].getState() != 2) {
           balls[i].setState(1);
           balls[i].grow();
           balls[i].setStop(0, 0);
+          balls[i].die();
         }
       }
     }
     for ( int x = 0; x < balls.length-1; x++ ) {
-      if (colliding(balls[x], walee)) {
+      if (colliding(balls[x], walee) && walee.getState() == 1) {
         balls[x].setState(1);
         balls[x].grow();
-        balls[x].setStop(0, 0);
-      }
-    }
-    for ( int x = 0; x < balls.length-1; x++ ) {
-      if (balls[x].getState() == 1) {
         balls[x].setStop(0, 0);
         balls[x].die();
       }

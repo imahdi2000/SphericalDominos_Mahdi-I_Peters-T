@@ -34,7 +34,7 @@ class ball {
   }
     
     void grow(){
-         if (rad < 50 && rad > 0){
+         if (rad < 51 && rad > 0 && state < 2){
            rad += .25; 
      }
     }
@@ -42,6 +42,8 @@ class ball {
     void die(){
      if (rad > 49){
        state = 2; 
+       c = 0;
+       rad = 0;
      }
     }
     
