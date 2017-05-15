@@ -1,6 +1,6 @@
 # SphericalDominos_Mahdi-I_Peters-T
 
-##Chain Reaction
+#Chain Reaction
 
 Instructions:
 
