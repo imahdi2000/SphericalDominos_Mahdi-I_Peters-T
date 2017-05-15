@@ -1,6 +1,7 @@
 # SphericalDominos_Mahdi-I_Peters-T
 
-#Chain Reaction
+
+## Chain Reaction
 
 Instructions:
 
@@ -8,7 +9,8 @@ Instructions:
 
 What to Expect:
 
-     The balls will freely move around the box. However, once the mouse is clicked, an exploding ball will be activated. Once another ball encounters the exploding ball, it too will also explode.
+     The balls will freely move around the box. However, once the mouse is clicked, an exploding ball will be activated.
+     Once another ball encounters the exploding ball, it too will also explode.
 
 Bugs:
 
